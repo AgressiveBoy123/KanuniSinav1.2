@@ -1,0 +1,176 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sifre = textBox1.Text;
+            if (sifre == "1111")
+            {
+                MessageBox.Show("Şifre doğru!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+                textBox4.Enabled = true;
+                label2.Enabled = true;
+                label3.Enabled = true;
+                label4.Enabled = true;
+                button2.Enabled = true;
+                textBox1.Enabled = false;
+                label1.Enabled = false;
+                button1.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Şifre hatalı, tekrar giriş yapınız.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Kaydınız yapılmıştır! Anket soruları açılmıştır.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            label2.Enabled = false;
+            label3.Enabled = false;
+            label4.Enabled = false;
+            button2.Enabled = false;
+            textBox1.Enabled = false;
+            label1.Enabled = false;
+            button1.Enabled = false;
+            groupBox3.Enabled = true;
+            groupBox4.Enabled = true;
+            groupBox5.Enabled = true;
+            groupBox6.Enabled = true;
+            textBox18.Text = textBox2.Text;
+            textBox19.Text = textBox3.Text;
+            textBox20.Text = textBox4.Text;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int dogru = 0;
+            if (radioButton2.Checked == true)
+            {
+                dogru = dogru + 1;
+            }
+            else
+            {
+                dogru = dogru;
+            }
+            
+            if (radioButton8.Checked == true)
+            {
+                dogru = dogru + 1;
+            }
+            else 
+            {
+                dogru = dogru;
+            }
+
+            if (radioButton10.Checked == true)
+            {
+                dogru = dogru + 1;
+            }
+            else
+            {
+                dogru = dogru;
+            }
+            label13.Text = (dogru + " tane soruyu doğru bildiniz");
+            if (dogru == 3)
+            {
+                groupBox7.Enabled = true;
+            }
+            else
+            {
+                groupBox7.Enabled = true;
+            }
+
+            
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int genelort, btt1yaz, btt2yaz, btterf, btu1yaz, btu2yaz, btuerf, ntp1yaz, ntp2yaz, ntperf, bttort, btuort, ntport;
+            btt1yaz = Convert.ToInt32(textBox5.Text);
+            btt2yaz = Convert.ToInt32(textBox6.Text);
+            btterf = Convert.ToInt32(textBox13.Text);
+            btu1yaz = Convert.ToInt32(textBox12.Text);
+            btu2yaz = Convert.ToInt32(textBox7.Text);
+            btuerf = Convert.ToInt32(textBox10.Text);
+            ntp1yaz = Convert.ToInt32(textBox11.Text);
+            ntp2yaz = Convert.ToInt32(textBox8.Text);
+            ntperf = Convert.ToInt32(textBox9.Text);
+            bttort = (btt1yaz + btt2yaz + btterf) / 3;
+            btuort = (btu1yaz + btu2yaz + btuerf) / 3;
+            ntport = (ntp1yaz + ntp2yaz + ntperf) / 3;
+            genelort = (ntport + btuort + bttort) / 3;
+            textBox16.Text = bttort.ToString();
+            textBox15.Text = btuort.ToString();
+            textBox14.Text = ntport.ToString();
+            textBox17.Text = genelort.ToString();
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Left = pictureBox1.Left + 10;
+        }
+
+        private void groupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Left = pictureBox1.Left - 10;
+        }
+    }
+}
